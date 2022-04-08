@@ -4,11 +4,10 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Incident Responder by day
-> Everything Security by night 
-> BS/MS Computer Security @ Rochester Institute of Technology
-> [Next-Hop](http://nexthop.network/) ex-president
-> RITSEC member, [RITSEC Red-Team](https://github.com/RITRedteam/) member
-> OSCP & CCENT & CCNA and PCSSA certified
-> Interested in defensive/offensive security 
-
+- Incident Responder by day.
+- Everything Security by night.
+- BS/MS Computer Security @ Rochester Institute of Technology
+- [Next-Hop](http://nexthop.network/) ex-president
+- RITSEC member, [RITSEC Red-Team](https://github.com/RITRedteam/) member.
+- OSCP & CCENT & CCNA and PCSSA certified.
+- Interested in defensive/offensive security.
