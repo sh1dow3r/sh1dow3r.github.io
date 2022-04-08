@@ -46,9 +46,9 @@ social:
     # The first element serves as the copyright owner's link
     - https://twitter.com/sh1dow3r      # change to your twitter homepage
     - https://github.com/sh1dow3r      # change to your github homepage
+    - https://www.linkedin.com/in/ali-alamri
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/ali-alamri
 
 google_site_verification:               # fill in to your verification string
 
