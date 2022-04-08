@@ -1,8 +1,15 @@
 ---
+layout: about
 title: About
-icon: fas fa-info-circle
-order: 4
+permalink: /about/
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-{: .prompt-tip }
+# Ali Alamri
+
+* #### Incident Responder by day
+* #### Everything Security by night 
+* #### BS/MS Computer Security @ Rochester Institute of Technology
+* #### [Next-Hop](http://nexthop.network/) president
+* #### RITSEC member, [RITSEC Red-Team](https://github.com/RITRedteam/) member
+* #### OSCP & CCENT & CCNA and PCSSA certified
+* #### interested in defensive/offensive security and network security 
