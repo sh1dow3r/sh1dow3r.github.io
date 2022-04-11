@@ -40,7 +40,7 @@ Configuring and setting up different services manually is both time-consuming an
 
 ##    **Constructed Topology**
 
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/Virtualized_Malware_Analysis_Environment.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/Virtualized_Malware_Analysis_Environment.png"/>
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 As depicted in the topology we have a computer that communicated with VMware vCenter to deploy the SIFT workstation. After that, we configure the workstation with Cuckoo project using Ansible. Lastly, we provision VirtualBox using vagrant to spawn up a virtual machine to be used for malware analysis.
@@ -50,7 +50,7 @@ As depicted in the topology we have a computer that communicated with VMware vCe
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">  
 Before diving into the project let's take a quick look at the structure of the code:   </span>
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/Sandboxer_Dir_Structure.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/Sandboxer_Dir_Structure.png"/>
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 As you can here, we have a bunch of files, starting from the top, we have:  
@@ -74,12 +74,12 @@ The rest will follows in the next section.
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 After we install the dependencies for the project we start with the first step, which is deploying our workstation to vCenter. To do so, we will edit the `vars.yml` section to  have the required information we need to deploy the vm.  
 Here is a quick example of what my file looks
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/vars_content.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/vars_content.png"/>
 `vars.yml` file contains a lot of variables related to the vCenter API. After making sure, you have all the variables set.  Additionally, make sure you have the SIFT ova file in the correct path. Now we will run the the playbook `SIFT-Deploy.yml` to deploy SIFT workstation using the follwoing command.
 `ansible-playbook SIFT-Deploy.yml`  
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/SIFT_Deploment_vCenter.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/SIFT_Deploment_vCenter.png"/>
 
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/Ansible_output_after_vcenter_deployment.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/Ansible_output_after_vcenter_deployment.png"/>
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">  
 As you can see, in the previous screenshot the ansible playbook is completed and the vm is deployed on the vCenter server. (Note: you may discard the warnings while running the playbook).
 
@@ -90,16 +90,16 @@ Now that we have deployed the virtual machine, let's starts the the Cuckoo deplo
 `ansible-playbook SIFT-Cuckoo-Sandbox.yml -i inventory.ini`
 After issuing the command we wait for a few minutes for the whole setup to be done then we hop onto the workstation to confirm the installment as seen in the screenshot below
 </span>
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/cuckoo_after_installing.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/cuckoo_after_installing.png"/> 
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 After we confirmed all the configuration is done, we'll navigate to `home/cuckoo/vagrant_files` which has the windows10 virtual machine we're going to use for malware analysis. There should be a bash script called `vagrant_script.sh` that is going to pull a windows 10 image and set it up with Virtualbox then take a stable snapshot.
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/After_vagrant.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/After_vagrant.png"/> 
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 After windows10 is up and running make sure it's snapshotted and there you go, you have your Cuckoo Sandbox up and ruining! :
 </span>
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Sandbox/Cuckoo_up_and_running.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Sandbox/Cuckoo_up_and_running.png"/> 
 
 
 ## Conclusion
