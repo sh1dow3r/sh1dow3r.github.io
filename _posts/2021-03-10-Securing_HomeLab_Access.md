@@ -103,6 +103,6 @@ The NAT rules would look like something like this:
 
 [Cloudflare docs](https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard)
 
-[Cloudflare Settings for Traefik Docker](smarthomebeginner.com/cloudflare-settings-for-traefik-docker)
+[Cloudflare Settings for Traefik Docker](https://smarthomebeginner.com/cloudflare-settings-for-traefik-docker)
 
 [Evan's Github](https://github.com/egallis31/traefik-elk-grafana)
