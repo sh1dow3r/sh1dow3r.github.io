@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Securing HomeLab Access"
+title:  "Securing Environment Remote Access"
 categories: Homelab, Cloudflare, Virtualization
 ---
 
@@ -25,7 +25,7 @@ For this post, you will need three things: <br />
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">  
 Before diving into the project, let's take a define some terms to establish ground-level knowledge:
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/CF_dashboard.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/CF_dashboard.png"/>
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">  
 `Cloudflare Dashboard`: Cloudflare dashboard is where you define the DNS records and modify them. Since we're on the subject, the dashboard so many many AMAZING services that I can't even begin to fathom what you could accomplish with them. For the time being, we will stick with the basics ones such as:
 <br />
@@ -35,7 +35,7 @@ Before diving into the project, let's take a define some terms to establish grou
 <span style="color: #f2cf4a; font-family: Babas; font-size: 1.1em;"> To read more about these services, visit their [documentation]( https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard) page.
 <span style="color: #f2cf4a; font-family: Babas; font-size: 1.1em;">  
 `Traefik`: Traefik is a dockerized and open-source reverse proxy and load balancer typically used with microservices in the cloud(Docker swarm, Kubernetes).
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/Traefik.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/Traefik.png"/>
 </span>
 
 ## **Install/Setup**
@@ -45,12 +45,12 @@ Before diving into the project, let's take a define some terms to establish grou
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;"> 
 Under [Cloudflare dashboard]( https://dash.cloudflare.com)
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;"> Go to the DNS tab and create a new 'A' record that corrospond to you public IP. An example is shown in the screenshot below. This record will be used for the traefik web interface.
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/CF_DNS.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/CF_DNS.png"/>
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;;">
 After adding the 'A' record, you will need to add a 'CNAME' record for each microservice you need to access externally. The CNAME record will point back to the Traefik 'A' record "dynamic" we added earlier.
 Here's an example of adding a web01 record.
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/CF_web01.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/CF_web01.png"/>
 
 #### Securing your mircoservices with Cloudflear Access
 
@@ -59,7 +59,7 @@ Cloudflare provides you with functionality where you can limit the access of spe
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 After you setup your login method create an Access policy for your microservice you want to limit its access. 
 In the screenshot below, I'm creating an access policy that limits the access of web01 page to the user with `l33t@gamil.com` email. There are many ways to restrict access to a page that is better than what I'm showing that Cloudflare feature such as ("Emails ends with", "IP range", "Access Service Token", ... ).
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/CF_AccessPolicy.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/CF_AccessPolicy.png"/>
 
 ### - VM setup
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
@@ -75,8 +75,8 @@ Inside the repo you will need to apply two task
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">  
 2- Make note of your Global API KEY and email from your cloudflare account. This information can be found in your under your profile [Cloudflare dashboard]( https://dash.cloudflare.com/)  <br />
 After you have taking the global API Key, add it to the dockerfile in Traefik folder, and add your email as well as shown in the screenshot below:
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/CF_API.png"/>
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/Traefik_Dockerfile.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/CF_API.png"/>
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/Traefik_Dockerfile.png"/> 
 
 
 ### - pfSense Setup
@@ -86,10 +86,10 @@ Now that we configure pfSense to redirect the traffic coming on port 80 and port
 </span>
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 The Firewall rules would look like something like this:
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/FirewallRule.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/FirewallRule.png"/> 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
 The NAT rules would look like something like this:
-<img src="https://raw.githubusercontent.com/sh1dow3r/layer0/gh-pages/_posts/img/Remote_Access_Homelab/NATRule.png"/> 
+<img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/NATRule.png"/> 
 
 
 
