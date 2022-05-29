@@ -2,7 +2,9 @@
 layout: post
 title:  "DHCP Attack & Mitigation"
 categories: Network_Security
+tags: [Network Security]
 ---
+
 #  Introduction
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;"> DHCP short for Dynamic Host Configuration Protocol) is one of the most important service to have is a network. This protocol serves the advantage of providing clients information such as IP address, subnet mask, DNS server, default gateway dynamically rather than configuring each host statically. This server start a process called (DORA) short for Discover, Offer, Request, Acknowledge. The process starts with the server listing on port 67 for discover requests on the network sent by clients. When a client sends out a discover packet across the network the server sees it and respond back with an offer providing the “offered” IP address over to the clients who is listening on port 68. The client then requests that IP address from the server and the server confirms that request by sending an ACK packet back.</span>
 

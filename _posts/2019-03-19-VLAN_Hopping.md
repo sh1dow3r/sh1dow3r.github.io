@@ -2,7 +2,9 @@
 layout: post
 title:  "VLAN Hopping"
 categories: Network_Security
+tags: [Network Security]
 ---
+
 # **Introduction**
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;"> Generally, when talking about VLAN hopping there are two type of attacks, one is called Double Tagging attack which we will be talking about here and the other is spoofing attack. Double Tagging attacks take advantage of a native VLAN trunking configuration in which frames are allowed to be transmitted through VLANs via the trunking port. The attack manipulates the 802.1Q header by adding an extra header which will get stripped off when leaving the switch and forwarded to the trunk port that’s on native VLAN 1. Subsequently, the other switch will forward the packet to the corresponding host on that VLAN. It’s worth noting that the destination of the packet will be based off of the second tag, since the switch only looks at the first VLAN tag it sees. </span>
 

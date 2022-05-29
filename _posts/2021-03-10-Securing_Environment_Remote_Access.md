@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  "Securing Environment Remote Access"
-categories: Homelab, Cloudflare, Virtualization
+categories: [Traefik, CloudFlare, pfSense, Virtualization]
+tags: [ Experiments ]
 ---
 
 
@@ -91,15 +92,12 @@ The Firewall rules would look like something like this:
 The NAT rules would look like something like this:
 <img src="https://raw.githubusercontent.com/sh1dow3r/sh1dow3r.github.io/master/_posts/img/Remote_Access_Homelab/NATRule.png"/> 
 
-
-
 ## Conclusion
 
 <span style="color: #f2cf4a; font-family: Babas; font-size: 0.9em;">
  In this blog I explained how to add a secondary access to your homelab using Cloudflare free features and using Traefik reverse proxy. I also touched a bit how to configure the routes on pfSense to allow the traffic through using NAT rules. Using such method can help if you lose you VPN access to your environment and help prevent single point of failure on certain cases. </span>
 
 # References
-
 
 [Cloudflare docs](https://support.cloudflare.com/hc/en-us/articles/205075117-Understanding-the-Cloudflare-dashboard)
 

@@ -2,6 +2,7 @@
 layout: post
 title:  "Virtualized Malware Analysis Environment"
 categories: Malware_Forensics
+tags: [Malware Analysis]
 ---
 
 ## **Background** <br/>  
