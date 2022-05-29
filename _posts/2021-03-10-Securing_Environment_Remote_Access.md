@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Securing Environment Remote Access"
-categories: [Traefik, CloudFlare, pfSense, Virtualization]
+categories: [Homelab_Projects]
 tags: [ Experiments ]
 ---
 

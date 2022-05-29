@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Virtualized Malware Analysis Environment"
-categories: Malware_Forensics
+categories: [DFIR, Malware_Analysis]
 tags: [Malware Analysis]
 ---
 
